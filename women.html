@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto"> 
+<head>
+    <meta charset="UTF-8"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Women's Apparel | Lina Store</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="page-wrapper">
+
+    <div class="menu-icon" onclick="toggleMenu()">☰</div>
+    <div id="sideMenu" class="sidebar">
+        <div class="close-btn" onclick="toggleMenu()">×</div>
+        <div class="menu-content">
+            <a href="index.html">Main Home</a>
+            <a href="amazon.html">Amazon Favorites</a>
+            <a href="men.html">Men's Apparel</a>
+            <a href="women.html" style="color: var(--gold);">Women's Apparel</a>
+            <a href="accessories.html">Accessories</a>
+        </div>
+    </div>
+
+    <a href="amazon.html" class="back-link">← Back to Amazon Favorites</a>
+
+    <div class="banner-container">
+        <img src="banner.png" alt="Women's Collection Banner">
+    </div>
+
+    <input type="search" id="searchInput" class="search-box" placeholder="🔍 Search in Women's section..." onkeypress="performSmartSearch(event)">
+
+    <h1>Women's Apparel</h1>
+
+    <div class="product-grid" id="productGrid">
+        <div class="product-card">
+            <div class="product-image-container"><img src="w1.jpg"></div>
+            <div class="product-title">Elegant Evening Gown - Midnight Blue</div>
+            <div class="price">$120.00</div>
+            <a href="#" class="buy-btn">View on Amazon</a>
+        </div>
+
+        <div class="product-card">
+            <div class="product-image-container"><img src="w2.jpg"></div>
+            <div class="product-title">Floral Summer Dress - Lightweight</div>
+            <div class="price">$45.99</div>
+            <a href="#" class="buy-btn">View on Amazon</a>
+        </div>
+
+        <div class="product-card">
+            <div class="product-image-container"><img src="w3.jpg"></div>
+            <div class="product-title">Professional Office Blazer</div>
+            <div class="price">$65.00</div>
+            <a href="#" class="buy-btn">View on Amazon</a>
+        </div>
+
+        <div class="product-card">
+            <div class="product-image-container"><img src="w4.jpg"></div>
+            <div class="product-title">High-Waist Skinny Jeans</div>
+            <div class="price">$38.50</div>
+            <a href="#" class="buy-btn">View on Amazon</a>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

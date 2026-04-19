@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto"> <head>
+    <meta charset="UTF-8"> <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amazon Favorites | RABIE</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="page-wrapper">
+
+    <div class="menu-icon" onclick="toggleMenu()">☰</div>
+    <div id="sideMenu" class="sidebar">
+        <div class="close-btn" onclick="toggleMenu()">×</div>
+        <div class="menu-content">
+            <a href="men.html">Men's Apparel</a>
+            <a href="women.html">Women's Apparel</a>
+            <a href="accessories.html">Accessories</a>
+        </div>
+    </div>
+
+    <a href="index.html" class="back-link">← Back to Main Store</a>
+
+    <div class="banner-container">
+        <img src="banner.png" alt="Amazon Banner">
+    </div>
+
+    <input type="search" id="searchInput" class="search-box" placeholder="🔍 Search products..." onkeypress="performSmartSearch(event)">
+
+    <h1>Amazon Favorites</h1>
+
+    <div class="product-grid" id="productGrid">
+        <div class="product-card"><div class="product-image-container"><img src="p1.jpg"></div><div class="product-title">Vince Camuto Women's Sleeveless</div><div class="price">$101.30</div><a href="https://amzn.to/4cq3qX0" class="buy-btn">View on Amazon</a></div>
+        <div class="product-card"><div class="product-image-container"><img src="p2.jpg"></div><div class="product-title">Adrianna Papell Women's Gown</div><div class="price">$96.74</div><a href="https://amzn.to/41ypGsN" class="buy-btn">View on Amazon</a></div>
+        <div class="product-card"><div class="product-image-container"><img src="p3.jpg"></div><div class="product-title">ADRIANNA PAPELL Knit Jumpsuit</div><div class="price">$89.97</div><a href="https://amzn.to/3Q7I617" class="buy-btn">View on Amazon</a></div>
+        <div class="product-card"><div class="product-image-container"><img src="p4.jpg"></div><div class="product-title">Tommy Hilfiger Faux Leather Belt</div><div class="price">$66.40</div><a href="https://amzn.to/4tRda3S" class="buy-btn">View on Amazon</a></div>
+        <div class="product-card"><div class="product-image-container"><img src="p5.jpg"></div><div class="product-title">Mens Suit Slim Fit Solid</div><div class="price">$68.39</div><a href="https://amzn.to/4vwDamv" class="buy-btn">View on Amazon</a></div>
+        <div class="product-card"><div class="product-image-container"><img src="p6.jpg"></div><div class="product-title">WULFUL Men's Slim Fit 3 Piece</div><div class="price">$59.12</div><a href="https://amzn.to/4cvqJyJ" class="buy-btn">View on Amazon</a></div>
+        <div class="product-card"><div class="product-image-container"><img src="p7.jpg"></div><div class="product-title">Men's Stretch Slim Fit 5-Piece</div><div class="price">$66.49</div><a href="https://amzn.to/4tNSzgI" class="buy-btn">View on Amazon</a></div>
+        <div class="product-card"><div class="product-image-container"><img src="p8.jpg"></div><div class="product-title">EastSide Men's Slim Fit 3 Pieces</div><div class="price">$69.85</div><a href="https://amzn.to/4tcnTWF" class="buy-btn">View on Amazon</a></div>
+        <div class="product-card"><div class="product-image-container"><img src="p9.jpg"></div><div class="product-title">Visaccy Boys Formal Suit</div><div class="price">$47.96</div><a href="https://amzn.to/4tcnTWF" class="buy-btn">View on Amazon</a></div>
+        <div class="product-card"><div class="product-image-container"><img src="p10.jpg"></div><div class="product-title">YuanLu Boys Suit Tuxedo</div><div class="price">$50.99</div><a href="https://amzn.to/4vtqA7L" class="buy-btn">View on Amazon</a></div>
+        <div class="product-card"><div class="product-image-container"><img src="p11.jpg"></div><div class="product-title">Boys Suits 5 Pieces Formal</div><div class="price">$28.69</div><a href="https://amzn.to/48oqFzN" class="buy-btn">View on Amazon</a></div>
+        <div class="product-card"><div class="product-image-container"><img src="p12.jpg"></div><div class="product-title">Boys' Suit Kids Formal Tuxedo</div><div class="price">$62.55</div><a href="https://amzn.to/4ctLbQu" class="buy-btn">View on Amazon</a></div>
+        <div class="product-card"><div class="product-image-container"><img src="p13.jpg"></div><div class="product-title">EXARUS Girls Blazer Jacket Teen Suit Long Sleeve Shawl Collar Formal Blazers Open Front Inner Pocket for Kids 6-14Y</div><div class="price">$32.99</div><a href="https://amzn.to/4tf2GuZ" class="buy-btn">View on Amazon</a></div>
+        <div class="product-card"><div class="product-image-container"><img src="p14.jpg"></div><div class="product-title">Meikulo Girls Blazers Kids Lapel Long Sleeve Open Front Solid Blazer Jacket with Pockets</div><div class="price">$35.98</div><a href="https://amzn.to/42gWwP8" class="buy-btn">View on Amazon</a></div>
+        <div class="product-card"><div class="product-image-container"><img src="p15.jpg"></div><div class="product-title">Meikulo Girls Blazers Kids Lapel Long Sleeve Open Front Solid Blazer Jacket with Pockets</div><div class="price">$35.98</div><a href="https://amzn.to/3ONxVyk" class="buy-btn">View on Amazon</a></div>
+        <div class="product-card"><div class="product-image-container"><img src="p16.jpg"></div><div class="product-title">EXARUS Girls Blazer Jacket Long Sleeve Teen Notched Collar/Lapel Collar with Pocket Open Front Casual Kids Blazers Suit</div><div class="price">$31.99</div><a href="https://amzn.to/4sCIJ05" class="buy-btn">View on Amazon</a></div>
+        <div class="product-card"><div class="product-image-container"><img src="p17.jpg"></div><div class="product-title">PATPAT Girl's Basic Denim Jacket with Flap Pocket Button，5-14Y</div><div class="price">$29.99</div><a href="https://amzn.to/4cq3qX0" class="buy-btn">View on Amazon</a></div>
+        <div class="product-card"><div class="product-image-container"><img src="p18.jpg"></div><div class="product-title">Personalized Jean Jacket for Girls and Boys, Toddler Back to School Clothes，Custom Kids Jackets Birthday Christmas</div><div class="price">$23.59</div><a href="https://amzn.to/4tukrGT" class="buy-btn">View on Amazon</a></div>
+    </div>
+
+    <script>
+        // دالة فتح وإغلاق المنيو
+        function toggleMenu() {
+            const menu = document.getElementById("sideMenu");
+            menu.style.width = (menu.style.width === "250px") ? "0" : "250px";
+        }
+
+        // دالة البحث الذكي المطورة
+        function performSmartSearch(event) {
+            // التفعيل عند الضغط على زر Enter فقط
+            if (event.key !== 'Enter') return;
+
+            let input = document.getElementById('searchInput').value.toLowerCase().trim();
+            if (!input) return;
+
+            let grid = document.getElementById('productGrid');
+            let foundLocally = false;
+
+            // 1. البحث والتمرير داخل الصفحة الحالية
+            if (grid) {
+                let cards = grid.getElementsByClassName('product-card');
+                for (let i = 0; i < cards.length; i++) {
+                    let titleElement = cards[i].querySelector('.product-title');
+                    if (titleElement) {
+                        let title = titleElement.innerText.toLowerCase();
+                        if (title.includes(input)) {
+                            // التمرير للمنتج بسلاسة
+                            cards[i].scrollIntoView({ behavior: 'smooth', block: 'center' });
+                            // تمييز المنتج المكتشف
+                            cards[i].style.transition = "0.3s";
+                            cards[i].style.boxShadow = "0 0 20px #D4AF37";
+                            setTimeout(() => cards[i].style.boxShadow = "0 2px 8px rgba(0,0,0,0.2)", 3000);
+                            
+                            foundLocally = true;
+                            break; // التوقف عند أول منتج مطابق
+                        }
+                    }
+                }
+            }
+
+            // 2. الانتقال لصفحات أخرى إذا لم يجد المنتج في الصفحة الحالية
+            if (!foundLocally) {
+                const pageMappings = [
+                    { file: 'men.html', keywords: ['men', 'homme', 'رجال', 'رجالي', 'رجالية'] },
+                    { file: 'women.html', keywords: ['women', 'femme', 'نساء', 'نسائي', 'نسائية'] },
+                    { file: 'accessories.html', keywords: ['accessories', 'إكسسوارات', 'مكملات'] }
+                ];
+
+                let match = pageMappings.find(item => 
+                    item.keywords.some(keyword => input.includes(keyword))
+                );
+
+                if (match) {
+                    window.location.href = match.file;
+                }
+            }
+        }
+    </script>
+</body>
+</html>
