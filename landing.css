@@ -120,3 +120,45 @@ body {
 .social-links a:active {
     transform: scale(0.9);
 }
+
+/* تنسيق الحاوية للأزرار الفرعية */
+.sub-deals {
+    display: flex;
+    justify-content: center;
+    gap: 10px; /* المسافة بين الزرين */
+    margin-top: 10px;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* تنسيق الأزرار الصغيرة (Men/Women) */
+.sub-btn {
+    flex: 1; /* لجعل الزرين بنفس الحجم */
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(212, 175, 55, 0.4);
+    color: #fff;
+    text-decoration: none;
+    padding: 8px 5px;
+    border-radius: 10px;
+    font-size: 0.8rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.sub-btn:hover {
+    background: var(--gold);
+    color: var(--dark);
+    border-color: var(--gold);
+    transform: translateY(-2px);
+}
+
+/* تعديل بسيط لزر Shop Now ليتناسب مع التصميم الجديد */
+.shop-now-btn {
+    margin-bottom: 5px !important;
+}
+
+
