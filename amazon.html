@@ -1,18 +1,25 @@
 <!DOCTYPE html>
-<html lang="en" dir="auto"> <head>
-    <meta charset="UTF-8"> <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<html lang="en" dir="auto"> 
+<head>
+    <meta charset="UTF-8"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Amazon Favorites | RABIE</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body class="page-wrapper">
 
     <div class="menu-icon" onclick="toggleMenu()">☰</div>
+    
     <div id="sideMenu" class="sidebar">
         <div class="close-btn" onclick="toggleMenu()">×</div>
         <div class="menu-content">
-            <a href="men.html">Men's Apparel</a>
-            <a href="women.html">Women's Apparel</a>
-            <a href="accessories.html">Accessories</a>
+            <a href="index.html" style="color: #D4AF37; font-weight: bold;">🏠 Main Store</a>
+            <hr style="border: 0.1px solid #444; margin: 10px 0;">
+            <a href="https://amzn.to/4sKQBfW" target="_blank">👗 Women's Apparel</a>
+            <a href="https://amzn.to/4e1Qaua" target="_blank">💍 Women's Accessories</a>
+            <a href="https://amzn.to/48h5YFM" target="_blank">👕 Men's Apparel</a>
+            <a href="https://amzn.to/4cqdHDS" target="_blank">👶 Kids' Apparel</a>
+            <a href="https://amzn.to/4vC6wQt" target="_blank">🍎 Apple Accessories</a>
         </div>
     </div>
 
@@ -22,7 +29,9 @@
         <img src="banner.png" alt="Amazon Banner">
     </div>
 
-    <input type="search" id="searchInput" class="search-box" placeholder="🔍 Search products..." onkeypress="performSmartSearch(event)">
+    <div style="position: relative; max-width: 480px; margin: 0 auto;">
+        <input type="search" id="searchInput" class="search-box" placeholder="🔍 Search products..." onkeypress="performSmartSearch(event)">
+    </div>
 
     <h1>Amazon Favorites</h1>
 
@@ -47,63 +56,6 @@
         <div class="product-card"><div class="product-image-container"><img src="p18.jpg"></div><div class="product-title">Personalized Jean Jacket for Girls and Boys, Toddler Back to School Clothes，Custom Kids Jackets Birthday Christmas</div><div class="price">$23.59</div><a href="https://amzn.to/4tukrGT" class="buy-btn">View on Amazon</a></div>
     </div>
 
-    <script>
-        // دالة فتح وإغلاق المنيو
-        function toggleMenu() {
-            const menu = document.getElementById("sideMenu");
-            menu.style.width = (menu.style.width === "250px") ? "0" : "250px";
-        }
-
-        // دالة البحث الذكي المطورة
-        function performSmartSearch(event) {
-            // التفعيل عند الضغط على زر Enter فقط
-            if (event.key !== 'Enter') return;
-
-            let input = document.getElementById('searchInput').value.toLowerCase().trim();
-            if (!input) return;
-
-            let grid = document.getElementById('productGrid');
-            let foundLocally = false;
-
-            // 1. البحث والتمرير داخل الصفحة الحالية
-            if (grid) {
-                let cards = grid.getElementsByClassName('product-card');
-                for (let i = 0; i < cards.length; i++) {
-                    let titleElement = cards[i].querySelector('.product-title');
-                    if (titleElement) {
-                        let title = titleElement.innerText.toLowerCase();
-                        if (title.includes(input)) {
-                            // التمرير للمنتج بسلاسة
-                            cards[i].scrollIntoView({ behavior: 'smooth', block: 'center' });
-                            // تمييز المنتج المكتشف
-                            cards[i].style.transition = "0.3s";
-                            cards[i].style.boxShadow = "0 0 20px #D4AF37";
-                            setTimeout(() => cards[i].style.boxShadow = "0 2px 8px rgba(0,0,0,0.2)", 3000);
-                            
-                            foundLocally = true;
-                            break; // التوقف عند أول منتج مطابق
-                        }
-                    }
-                }
-            }
-
-            // 2. الانتقال لصفحات أخرى إذا لم يجد المنتج في الصفحة الحالية
-            if (!foundLocally) {
-                const pageMappings = [
-                    { file: 'men.html', keywords: ['men', 'homme', 'رجال', 'رجالي', 'رجالية'] },
-                    { file: 'women.html', keywords: ['women', 'femme', 'نساء', 'نسائي', 'نسائية'] },
-                    { file: 'accessories.html', keywords: ['accessories', 'إكسسوارات', 'مكملات'] }
-                ];
-
-                let match = pageMappings.find(item => 
-                    item.keywords.some(keyword => input.includes(keyword))
-                );
-
-                if (match) {
-                    window.location.href = match.file;
-                }
-            }
-        }
-    </script>
+    <script src="amazon-script.js"></script>
 </body>
 </html>
