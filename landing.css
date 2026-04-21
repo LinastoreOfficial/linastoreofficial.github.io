@@ -161,4 +161,35 @@ body {
     margin-bottom: 5px !important;
 }
 
+/* تنسيق الزر الجديد بلمسة ربيعية وردية فاقعة */
+.btn-spring { 
+    background: #232f3e; /* نفس لون خلفية زر أمازون */
+    border: 1.5px solid #f06292; /* إطار وردي فاقع مستوحى من شعار العرض */
+    color: #f06292; /* لون النص وردي ليتناسب مع العرض */
+    display: block;
+    margin: 12px auto;
+    padding: 14px;
+    width: 90%;
+    text-decoration: none;
+    border-radius: 12px;
+    font-weight: 600;
+    text-align: center;
+    transition: all 0.3s ease;
+    box-sizing: border-box;
+}
+
+/* تأثير التمرير (نفس تأثير بقية الأزرار ولكن بتوهج وردي) */
+.btn-spring:hover, .btn-spring:active { 
+    transform: translateY(-3px); 
+    box-shadow: 0 5px 15px rgba(240, 98, 146, 0.4); /* توهج وردي ربيعي */
+    background: #2b3949; /* تفتيح الخلفية قليلاً */
+    filter: brightness(1.1);
+}
+
+/* تنسيق النص الصغير أسفل العنوان لزر الربيع */
+.btn-spring span {
+    font-size: 0.75rem;
+    opacity: 0.8;
+}
+
 
