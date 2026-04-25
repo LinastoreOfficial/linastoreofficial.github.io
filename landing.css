@@ -5,6 +5,7 @@
 :root { 
     --gold: #D4AF37; 
     --dark: #0A0A0A; 
+    --purple-glow: #ff90e8;
 }
 
 body { 
@@ -31,28 +32,9 @@ body {
     padding-bottom: 30px;
 }
 
-.top-banner { 
-    width: 100%; 
-    display: block; 
-    margin-bottom: 20px; 
-}
-
-.name { 
-    font-size: 1.5rem; 
-    font-weight: bold; 
-    color: var(--gold); 
-    margin-bottom: 10px; 
-    text-transform: uppercase; 
-}
-
-.title { 
-    color: #ccc; 
-    font-size: 0.9rem; 
-    margin-bottom: 20px; 
-    padding: 0 20px; 
-    line-height: 1.4; 
-    font-style: italic; 
-}
+.top-banner { width: 100%; display: block; margin-bottom: 20px; }
+.name { font-size: 1.5rem; font-weight: bold; color: var(--gold); margin-bottom: 10px; text-transform: uppercase; }
+.title { color: #ccc; font-size: 0.9rem; margin-bottom: 20px; padding: 0 20px; line-height: 1.4; font-style: italic; }
 
 /* الأزرار */
 .btn { 
@@ -64,31 +46,51 @@ body {
     text-decoration: none; 
     border-radius: 12px; 
     font-weight: 600; 
-    text-align: center; 
     transition: all 0.3s ease;
     border: 1px solid var(--gold);
     box-sizing: border-box;
 }
 
+.btn span { font-size: 0.75rem; opacity: 0.7; font-weight: normal; display: block; margin-top: 4px; }
+
 .btn:hover { 
     transform: translateY(-3px); 
-    box-shadow: 0 5px 15px rgba(212, 175, 55, 0.3);
     filter: brightness(1.1);
 }
 
 .btn-rb { background: #000; } 
-.btn-vs { background: #1a2a6c; } 
-.btn-amzn { background: #232f3e; border-color: #ff9900; color: #ff9900; } 
+.btn-vs { background: #1a2a6c; border-color: #1a2a6c; } 
 
-.connect-text { 
-    color: var(--gold); 
-    font-size: 0.9rem; 
-    margin-top: 25px; 
-    margin-bottom: 15px; 
-    font-weight: 600; 
+/* زر جومرود البنفسجي المتوهج */
+.btn-gum-purple { 
+    background: linear-gradient(45deg, #6a1b9a, #9c27b0); 
+    border: 1.5px solid var(--purple-glow); 
+    color: #fff; 
+    box-shadow: 0 0 10px rgba(156, 39, 176, 0.4);
 }
 
-/* أيقونات التواصل الاجتماعي */
+.btn-gum-purple:hover {
+    box-shadow: 0 0 20px rgba(255, 144, 232, 0.6);
+    transform: translateY(-3px) scale(1.02);
+}
+
+.btn-amzn { background: #232f3e; border-color: #ff9900; color: #ff9900; } 
+.btn-spring { background: #232f3e; border: 1.5px solid #f06292; color: #f06292; }
+.btn-wa { border-color: #25D366; color: #25D366; }
+
+/* أزرار أمازون الفرعية */
+.sub-deals { display: flex; justify-content: center; gap: 10px; width: 90%; margin: 10px auto; }
+.sub-btn { flex: 1; background: rgba(255, 255, 255, 0.1); border: 1px solid rgba(212, 175, 55, 0.4); color: #fff; text-decoration: none; padding: 8px; border-radius: 10px; font-size: 0.8rem; display: flex; align-items: center; justify-content: center; transition: 0.3s; }
+.sub-btn:hover { background: var(--gold); color: var(--dark); }
+
+.shop-now-btn { margin-bottom: 5px !important; }
+
+/* ========================================= */
+/* دوران أيقونات التواصل الاجتماعي (360 درجة) */
+/* ========================================= */
+
+.connect-text { color: var(--gold); font-size: 0.9rem; margin: 25px 0 15px; font-weight: 600; }
+
 .social-links { 
     display: flex; 
     justify-content: center; 
@@ -100,7 +102,6 @@ body {
 
 .social-links a {
     display: inline-block;
-    transition: transform 0.3s ease;
 }
 
 .social-links img { 
@@ -108,88 +109,22 @@ body {
     height: 45px; 
     object-fit: contain; 
     display: block;
+    /* transition لجعل الدوران ناعم */
     transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275); 
 }
 
-.social-links a:hover img,
+/* تفعيل الدوران عند وضع الماوس أو اللمس */
+.social-links a:hover img, 
 .social-links a:active img { 
     transform: translateY(-10px) rotate(360deg); 
-    filter: drop-shadow(0 5px 10px rgba(212, 175, 55, 0.5));
+    filter: drop-shadow(0 5px 15px rgba(212, 175, 55, 0.6));
+}
+
+/* جعل أيقونة جومرود بيضاء ومتناسقة */
+.social-links img.gum-icon { 
+    filter: invert(1); 
 }
 
 .social-links a:active {
     transform: scale(0.9);
-}
-
-/* تنسيق الحاوية للأزرار الفرعية */
-.sub-deals {
-    display: flex;
-    justify-content: center;
-    gap: 10px; /* المسافة بين الزرين */
-    margin-top: 10px;
-    width: 90%;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-/* تنسيق الأزرار الصغيرة (Men/Women) */
-.sub-btn {
-    flex: 1; /* لجعل الزرين بنفس الحجم */
-    background: rgba(255, 255, 255, 0.1);
-    border: 1px solid rgba(212, 175, 55, 0.4);
-    color: #fff;
-    text-decoration: none;
-    padding: 8px 5px;
-    border-radius: 10px;
-    font-size: 0.8rem;
-    font-weight: 500;
-    transition: all 0.3s ease;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.sub-btn:hover {
-    background: var(--gold);
-    color: var(--dark);
-    border-color: var(--gold);
-    transform: translateY(-2px);
-}
-
-/* تعديل بسيط لزر Shop Now ليتناسب مع التصميم الجديد */
-.shop-now-btn {
-    margin-bottom: 5px !important;
-}
-
-/* تنسيق الزر الجديد بلمسة ربيعية وردية فاقعة */
-.btn-spring { 
-    background: #232f3e; /* نفس لون خلفية زر أمازون */
-    border: 1.5px solid #f06292; /* إطار وردي فاقع مستوحى من شعار العرض */
-    color: #f06292; /* لون النص وردي ليتناسب مع العرض */
-    display: block;
-    margin: 12px auto;
-    padding: 14px;
-    width: 90%;
-    text-decoration: none;
-    border-radius: 12px;
-    font-weight: 600;
-    text-align: center;
-    transition: all 0.3s ease;
-    box-sizing: border-box;
-}
-
-/* تأثير التمرير (نفس تأثير بقية الأزرار ولكن بتوهج وردي) */
-.btn-spring:hover, .btn-spring:active { 
-    transform: translateY(-3px); 
-    box-shadow: 0 5px 15px rgba(240, 98, 146, 0.4); /* توهج وردي ربيعي */
-    background: #2b3949; /* تفتيح الخلفية قليلاً */
-    filter: brightness(1.1);
-}
-
-/* تنسيق النص الصغير أسفل العنوان لزر الربيع */
-.btn-spring span {
-    font-size: 0.75rem;
-    opacity: 0.8;
-}
-
-
+    }
