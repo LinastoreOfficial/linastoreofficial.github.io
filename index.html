@@ -6,13 +6,17 @@
     <title>Lina Store | Your Lead Designer</title>
     <link rel="stylesheet" href="landing.css">
     <link rel="manifest" href="manifest.json">
-    <meta name="theme-color" content="#D4AF37">
+    <meta name="theme-color" content="#0A0A0A">
     <meta name="apple-mobile-web-app-capable" content="yes">
 </head>
 <body>
 <div class="card">
     <img src="banner.linastore.jpg" alt="Logo" class="top-banner">
     
+    <div id="install-banner" style="display: none; background: #D4AF37; color: #0A0A0A; padding: 12px; text-align: center; font-weight: bold; font-size: 14px; border-radius: 8px; margin: 15px auto; max-width: 90%; cursor: pointer; box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3); transition: transform 0.2s;">
+        📲 أحصل على تطبيق Lina Store! <span style="text-decoration: underline; margin-left: 5px;">اضغط هنا للتثبيت السريع</span>
+    </div>
+
     <div class="name">YOUR LEAD DESIGNER</div>
     <div class="title">"Bridging artistic creativity with curated quality. From custom POD designs to handpicked Amazon favorites, I bring you the best."</div>
     
@@ -60,15 +64,7 @@
     </div>
 </div>
 
-<script>
-  if ('serviceWorker' in navigator) {
-    window.addEventListener('load', () => {
-      navigator.serviceWorker.register('sw.js')
-        .then(reg => console.log('Service Worker Registered!', reg))
-        .catch(err => console.log('Service Worker Error:', err));
-    });
-  }
-</script>
+<script src="pwa-install.js"></script>
 
 </body>
 </html>
