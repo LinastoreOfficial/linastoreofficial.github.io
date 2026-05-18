@@ -3,17 +3,19 @@
   "name": "Lina Store | Your Lead Designer",
   "icons": [
     {
-      "src": "https://pwa-directory.com/images/web-app-manifest.png",
-      "type": "image/png",
-      "sizes": "192x192"
+      "src": "banner.linastore.jpg",
+      "type": "image/jpeg",
+      "sizes": "192x192",
+      "purpose": "any"
     },
     {
-      "src": "https://pwa-directory.com/images/web-app-manifest.png",
-      "type": "image/png",
-      "sizes": "512x512"
+      "src": "banner.linastore.jpg",
+      "type": "image/jpeg",
+      "sizes": "512x512",
+      "purpose": "any"
     }
   ],
-  "start_url": "./index.html",
+  "start_url": ".",
   "background_color": "#0A0A0A",
   "display": "standalone",
   "theme_color": "#0A0A0A",
