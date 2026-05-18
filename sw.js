@@ -31,7 +31,7 @@ self.addEventListener('activate', (e) => {
   );
 });
 
-// الحدث الإجباري لمتصفح Chrome لضمان ظهور نافذة التثبيت
+// الاستجابة للطلبات
 self.addEventListener('fetch', (e) => {
   e.respondWith(
       fetch(e.request).catch(() => {
@@ -39,4 +39,3 @@ self.addEventListener('fetch', (e) => {
       })
   );
 });
-      
