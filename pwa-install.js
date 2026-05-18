@@ -1,5 +1,5 @@
 /**
- * Smart PWA Install Prompt Script - LINA STORE
+ * Smart PWA Install Prompt Script - LINA STORE (Android & iOS)
  */
 let deferredPrompt;
 const installBanner = document.getElementById('install-banner');
@@ -7,37 +7,43 @@ const installBanner = document.getElementById('install-banner');
 // 1. تفعيل الـ Service Worker الرسمي للموقع
 if ('serviceWorker' in navigator) {
   window.addEventListener('load', () => {
-    navigator.serviceWorker.register('sw.js')
+    navigator.serviceWorker.register('./sw.js')
       .then(reg => console.log('Service Worker Registered!', reg))
       .catch(err => console.log('Service Worker Error:', err));
   });
 }
 
-// 2. التقاط حدث التثبيت التلقائي ومنعه لإظهار الزر المخصص بدلاً منه
+// 2. التقاط حدث التثبيت للأندرويد
 window.addEventListener('beforeinstallprompt', (e) => {
   e.preventDefault();
   deferredPrompt = e;
-  // إظهار الزر الذهبي للزوار لأن المتصفح جاهز للتثبيت
-  if (installBanner) {
-    installBanner.style.display = 'block';
-  }
+  // الزر ظاهر بالفعل في الـ HTML
 });
 
-// 3. تشغيل نافذة التثبيت الرسمية عند الضغط على الزر الذهبي
+// 3. معالجة الضغط على الزر (ذكاء اصطناعي للتمييز بين الأنظمة)
 if (installBanner) {
   installBanner.addEventListener('click', async () => {
+    
+    // أولاً: إذا كان أندرويد والمتصفح جاهز للتثبيت المباشر
     if (deferredPrompt) {
       deferredPrompt.prompt();
       const { outcome } = await deferredPrompt.userChoice;
-      console.log(`User response to the install prompt: ${outcome}`);
+      console.log(`User response: ${outcome}`);
       deferredPrompt = null;
-      // إخفاء الزر بعد تلبية الطلب
       installBanner.style.display = 'none';
+    } 
+    // ثانياً: إذا كان الزائر يستخدم آيفون (iOS)
+    else if (navigator.userAgent.match(/iPhone|iPad|iPod/i)) {
+      alert("للتثبيت على الآيفون: اضغط على زر المشاركة (Share) في الأسفل ⎋ ثم اختر 'إضافة إلى الشاشة الرئيسية' (Add to Home Screen) ➕");
+    } 
+    // ثالثاً: إذا كان التطبيق مثبتاً بالفعل أو على الكمبيوتر
+    else {
+      alert("التطبيق مدعوم بالكامل على الهواتف الذكية عبر متصفح Chrome أو Safari!");
     }
   });
 }
 
-// 4. إخفاء الزر نهائياً وبشكل تلقائي في حال كان التطبيق مثبتاً بالفعل لدى الزائر
+// 4. إخفاء الزر إذا تم التثبيت بنجاح
 window.addEventListener('appinstalled', () => {
   if (installBanner) {
     installBanner.style.display = 'none';
