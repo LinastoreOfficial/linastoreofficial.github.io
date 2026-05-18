@@ -1,7 +1,7 @@
 /**
  * Lina Store - Custom Styling (landing.css)
  * المطور: Lina Store Team
- * التحديث: مدمج مع زر التثبيت الذكي PWA
+ * التحديث: مدمج بالكامل مع إصلاح الأجزاء المقطوعة
  */
 
 :root { 
@@ -39,7 +39,7 @@ body {
 .title { color: #ccc; font-size: 0.9rem; margin-bottom: 20px; padding: 0 20px; line-height: 1.4; font-style: italic; }
 
 /* ==========================================
-   تنسيق زر التثبيت الذكي الـ PWA الذهبي المضاف
+   تنسيق زر التثبيت الذكي الـ PWA الذهبي 
    ========================================== */
 .pwa-gold-banner {
     display: block; 
@@ -57,7 +57,7 @@ body {
     border: none;
     box-sizing: border-box;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
-    animation: goldPulse 2s infinite; /* تأثير النبض لجذب انتباه الزائر */
+    animation: goldPulse 2s infinite;
 }
 
 .pwa-gold-banner span {
@@ -75,17 +75,10 @@ body {
     filter: brightness(1.1);
 }
 
-/* تأثير النبض الضوئي المتردد الخلفي للزر */
 @keyframes goldPulse {
-    0% {
-        box-shadow: 0 0 0 0 rgba(212, 175, 55, 0.5);
-    }
-    70% {
-        box-shadow: 0 0 0 10px rgba(212, 175, 55, 0);
-    }
-    100% {
-        box-shadow: 0 0 0 0 rgba(212, 175, 55, 0);
-    }
+    0% { box-shadow: 0 0 0 0 rgba(212, 175, 55, 0.5); }
+    70% { box-shadow: 0 0 0 10px rgba(212, 175, 55, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(212, 175, 55, 0); }
 }
 
 /* ==========================================
@@ -153,32 +146,21 @@ body {
     padding-top: 20px; 
 }
 
-.social-links a {
-    display: inline-block;
-}
+.social-links a { display: inline-block; }
 
 .social-links img { 
     width: 45px; 
     height: 45px; 
     object-fit: contain; 
     display: block;
-    /* transition لجعل الدوران ناعم */
     transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275); 
 }
 
-/* تفعيل الدوران عند وضع الماوس أو اللمس */
 .social-links a:hover img, 
 .social-links a:active img { 
     transform: translateY(-10px) rotate(360deg); 
     filter: drop-shadow(0 5px 15px rgba(212, 175, 55, 0.6));
 }
 
-/* جعل أيقونة جومرود بيضاء ومتناسقة */
-.social-links img.gum-icon { 
-    filter: invert(1); 
-}
-
-.social-links a:active {
-    transform: scale(0.9);
-}
-
+.social-links img.gum-icon { filter: invert(1); }
+.social-links a:active { transform: scale(0.9); }
